@@ -1,5 +1,5 @@
 site_name: risk-analytics-toolkit (student docs)
 nav:
-  - Home: index.md
+  - Home: docs/index.md
 theme:
   name: material 
