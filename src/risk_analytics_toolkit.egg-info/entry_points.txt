@@ -1,0 +1,2 @@
+[console_scripts]
+rat-streamlit = risk_analytics_toolkit.__main__:main

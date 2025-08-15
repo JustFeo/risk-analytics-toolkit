@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "risk-analytics-toolkit"
+version = "0.1.0"
+description = "Risk analytics toolkit with VaR/CVaR, GBM & ruin simulations, and a Streamlit UI."
+readme = "README.md"
+authors = [{ name = "student-dev" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.8.0",
+    "yfinance>=0.2.40",
+    "streamlit>=1.36.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.0",
+    "isort>=5.12.0",
+    "flake8>=7.0.0",
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
+    "pre-commit>=3.5.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]
+
+[project.scripts]
+rat-streamlit = "risk_analytics_toolkit.__main__:main" 
